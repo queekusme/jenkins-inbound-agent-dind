@@ -13,3 +13,4 @@ RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 RUN systemctl start docker
 USER jenkins
+CMD [ "dockerd" ]
