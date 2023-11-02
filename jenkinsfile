@@ -1,0 +1,18 @@
+pipeline {
+    agent {
+        label 'nomad'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                sh "docker build --tag queekusme/jenkins-inbound-agent-dind:latest -t queekusme/jenkins-inbound-agent-dind:1.0.0 ."
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh "docker image push queekusme/jenkins-inbound-agent-dind --all-tags"
+            }
+        }
+    }
+}
