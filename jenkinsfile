@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "docker build --tag queekusme/jenkins-inbound-agent-dind:latest -t queekusme/jenkins-inbound-agent-dind:1.0.0 ."
+                sh "docker build --tag queekusme/jenkins-inbound-agent-dind:latest -t queekusme/jenkins-inbound-agent-dind:1.0.1 ."
             }
         }
         stage('Deploy') {
